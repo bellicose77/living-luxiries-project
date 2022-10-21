@@ -23,9 +23,6 @@ const Register = () => {
                     <lable>Password: </lable>
                     <input name='password' type="password"/>
                     <br/>
-                    <lable>Admin: </lable>
-                    <input name='isAdmin' type="Boolean"/>
-                     
                 </form>
                 <button>Submit</button>
                 <p>Already have an account?<Link to='/login'><span>SignIn</span></Link></p>
