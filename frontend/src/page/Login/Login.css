@@ -1,0 +1,74 @@
+.loginContainer{
+    margin-top: 10px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+.loginImg{
+    padding: 5px;
+    width: 96px;
+    height: 40px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.396px;
+    color: rgba(0, 0, 0, 0.85);
+}
+.loginWrapper{
+    width: 570px;
+    height: 457px;
+    /* position: absolute; */
+    /* left: 435px;
+    top: 171px; */
+    margin: 20px;
+    background: #FFFFFF;
+    border: 1px solid #ABABAB;
+    border-radius: 4px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+};
+.loginHeader{
+    height: 29px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #000000;
+    text-align: center;
+
+};
+.loginInputFiel{
+    width: 457px;
+    height: 51px;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 57px;
+    margin: 5px;
+    color: #FFFFFF;
+}
+.loginInputField{
+    width: 457px;
+    height: 51px;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 57px;
+    margin: 5px;
+}
+button{
+    background: #111430;
+}
+.loginLink{
+  width: 343px;
+  height: 21px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.loginSpan{
+    color: #3F90FC;
+}
