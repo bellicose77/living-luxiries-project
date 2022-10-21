@@ -18,8 +18,10 @@
     color: #000000;
 }
 .lButton{
-    background-color: #111430;
-    width: 134px;
-    height: 45px;
+    
+background: #251D58;
+border-radius: 5px;
+width: 126px;
+height: 44px;
     color: #FFFFFF;
 }
