@@ -1,12 +1,13 @@
 import React from 'react';
 import './Navbar.css'
+import logo from '../../images/logo.png'
 
 const Navbar = () => {
     return (
         <div className='navContainer'>
         <div className='navWrapper'>
           <div className='nlogo'>
-            <img className='logoImg'/>
+            <img className='logoImg' src={logo}/>
           </div>
           <div className='nItem'>
             <div>
@@ -14,9 +15,10 @@ const Navbar = () => {
            </div>
             
              
-             <div>Our Portfolio</div>
-             <div>Our team</div>
-             <div>Contact Us</div>
+             <div>About</div>
+             <div>Projects</div>
+             <div>Contact</div>
+             <div>Admin</div>
              
              <button className='lButton'>Login</button>
              

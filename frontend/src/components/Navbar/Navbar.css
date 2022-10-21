@@ -1,5 +1,5 @@
 .navContainer{
-    background-color: #FBD062;
+    background-color: #F7F7F7;;
 }
 .navWrapper{
     display: grid;
@@ -12,9 +12,10 @@
 }
 .nItem{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
+    color: #000000;
 }
 .lButton{
     background-color: #111430;
