@@ -6,7 +6,7 @@ import './Register.css'
 const Register = () => {
     const[credentials,setCredentials] = useState({});
     const handleOnchange = e =>{
-        
+
     }
     return (
         <div>
@@ -19,13 +19,13 @@ const Register = () => {
             <div className='regForm'>
                 <form className='regFormInp'>
                     <lable>Name: </lable>
-                    <input name='username' type="text"/>
+                    <input name='username' onChange={handleOnchange} type="text"/>
                     <br/>
                     <lable>Email: </lable>
-                    <input name='email' type="email"/>
+                    <input name='email' onChange={handleOnchange} type="email"/>
                     <br/>
                     <lable>Password: </lable>
-                    <input name='password' type="password"/>
+                    <input name='password' onChange={handleOnchange} type="password"/>
                     <br/>
                 </form>
                 <button>Submit</button>
