@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import './Register.css'
 
 const Register = () => {
+    const[credentials,setCredentials] = useState({});
+    const handleOnchange = e =>{
+        
+    }
     return (
         <div>
         <Navbar/>
