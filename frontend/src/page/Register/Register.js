@@ -6,11 +6,13 @@ import './Register.css'
 const Register = () => {
     const[credentials,setCredentials] = useState({});
     const handleOnchange = e =>{
+        const fieldname = e.target.name;
+        setCredentials({...credentials,[fieldname]:e.target.value})
 
     };
     const handleSubmitButton = e =>{
         e.preventDefault();
-        console.log("submit button");
+        console.log(credentials);
     }
     return (
         <div>
