@@ -7,6 +7,10 @@ const Register = () => {
     const[credentials,setCredentials] = useState({});
     const handleOnchange = e =>{
 
+    };
+    const handleSubmitButton = e =>{
+        e.preventDefault();
+        console.log("submit button");
     }
     return (
         <div>
@@ -28,7 +32,7 @@ const Register = () => {
                     <input name='password' onChange={handleOnchange} type="password"/>
                     <br/>
                 </form>
-                <button>Submit</button>
+                <button onClick={handleSubmitButton}>Submit</button>
                 <p>Already have an account?<Link to='/login'><span>SignIn</span></Link></p>
             </div>
 
