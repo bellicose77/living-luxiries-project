@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express'
 const { default: mongoose } = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
