@@ -1,8 +1,8 @@
 import express from 'express'
-const { default: mongoose } = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const authRoute = require('./routes/auth')
+import mongoose  from 'mongoose';
+import dotenv from 'dotenv'
+import cors from 'cors'
+import authRoute from './routes/auth.js'
 const app = express();
 dotenv.config();
 const port = 6000;
