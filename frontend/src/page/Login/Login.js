@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import './Login.css'
 import logo from '../../images/logo.png'
 
 const Login = () => {
+  const[userdata,setUserData] = useState({username:'',password:''});
+  const handleOnchangeInput = e =>{
+    const fieldName = e.target.name;
+    
+  }
     return (
         <div>
             <Navbar/>
