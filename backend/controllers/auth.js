@@ -24,9 +24,21 @@ import bcrypt from 'bcrypt'
 };
 
 export const logingController = async(req,res,next)=>{
+    const {username,password} = req.body;
+     
     try{
-        const {username,password} = req.body;
-        console.log("loging frontend",username)
+        const user = await User.findOne({username:username});
+        if(!user){
+            return res.status(400).json({'message':"Invaild user"})
+        }
+        const isPasswordCorrect = bcrypt.compare(password,user.password)
+        if(!isPasswordCorrect){
+            return res.status(400).json({"message":"invaild password"})
+        }
+        else{
+            res.status(400).json({"password match"})
+        }
+        //console.log("loging frontend",username)
 
     }catch(err){
         next(err)
