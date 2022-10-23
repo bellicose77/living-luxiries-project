@@ -21,5 +21,14 @@ import bcrypt from 'bcrypt'
     }catch(e){
         next(e);
     }
-   
+};
+
+export const logingController = async(req,res,next)=>{
+    try{
+        const {username,password} = req.body;
+        console.log("loging frontend",username)
+
+    }catch(err){
+        next(err)
+    }
 }

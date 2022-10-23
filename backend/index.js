@@ -5,7 +5,7 @@ import cors from 'cors'
 import authRoute from './routes/auth.js'
 const app = express();
 dotenv.config();
-const port = 6000;
+const port = 8000;
 
 // data base connection 
 const connect = async() =>{
