@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import './Register.css'
 
@@ -11,10 +11,18 @@ const Register = () => {
         setCredentials({...credentials,[fieldname]:e.target.value})
 
     };
+    const navigate = useNavigate();
     const handleSubmitButton = async(e) =>{
         e.preventDefault();
         console.log(credentials);
-        const user = await axios.post('http://localhost:6000/api/auth/register',credentials)
+        try{
+            const user = await axios.post('http://localhost:8000/api/auth/register',credentials);
+            navigate('/login')
+            console.log(user);
+        }catch(err){
+            
+        }
+      
     }
     return (
         <div>
