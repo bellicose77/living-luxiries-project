@@ -24,7 +24,7 @@ const Register = () => {
             </div>
             <div className='regForm'>
                 <form className='regFormInp'>
-                    <lable>Name: </lable>
+                    <lable>User Name: </lable>
                     <input name='username' onChange={handleOnchange} type="text"/>
                     <br/>
                     <lable>Email: </lable>
