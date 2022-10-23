@@ -36,7 +36,7 @@ export const logingController = async(req,res,next)=>{
             return res.status(400).json({"message":"invaild password"})
         }
         else{
-            res.status(400).json({"password match"})
+            res.status(400).json({'message':"password match",user})
         }
         //console.log("loging frontend",username)
 
