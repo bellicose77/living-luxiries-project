@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import './Register.css'
 
 const Register = () => {
-    const[credentials,setCredentials] = useState({});
+    const[credentials,setCredentials] = useState({username:'',email:'',password:''});
     const handleOnchange = e =>{
         const fieldname = e.target.name;
         setCredentials({...credentials,[fieldname]:e.target.value})
 
     };
-    const handleSubmitButton = e =>{
+    const handleSubmitButton = async(e) =>{
         e.preventDefault();
         console.log(credentials);
+        const user = await axios.post('http://localhost:6000/api/auth/register',credentials)
     }
     return (
         <div>
