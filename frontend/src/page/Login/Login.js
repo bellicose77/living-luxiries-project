@@ -8,7 +8,17 @@ const Login = () => {
   const[userdata,setUserData] = useState({username:'',password:''});
   const handleOnchangeInput = e =>{
     const fieldName = e.target.name;
-    
+    setUserData((pre)=>({...pre,[fieldName]:e.target.value}))
+
+  };
+  const handleLogin = async(e)=>{
+    e.preventDefault();
+    try{
+
+    }
+    catch(err){
+
+    }
   }
     return (
         <div>
@@ -23,13 +33,13 @@ const Login = () => {
                    </div>
                    <div className='loginInput'>
                      <div className='loginInputFiel'>
-                       <input name='username'className='loginInputField' type="text" placeholder="username"/>
+                       <input name='username' onChange={handleOnchangeInput} className='loginInputField' type="text" placeholder="username"/>
                          <br/>
-                        <input name='password' className='loginInputField' type="password" placeholder="password"/>
+                        <input name='password' onChange={handleOnchangeInput} className='loginInputField' type="password" placeholder="password"/>
                         <br/>
                        </div>
                     
-                      <button className='loginInputField'>Submit</button>
+                      <button onClick={handleLogin} className='loginInputField'>Submit</button>
                    </div>
                    <div className='loginLink'>
                     <p>Don't have an accont?<Link to="/register"><span className='loginSpan'>Create an account</span></Link></p>
