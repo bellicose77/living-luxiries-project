@@ -21,6 +21,13 @@ const connect = async() =>{
 app.use(cors());
 app.use(express.json());
 
+//error 
+
+app.use((err,req,res,next)=>{
+  console.log(err);
+  return res.status(500).json({'message':"serverside error"})
+})
+
 app.use('/api/auth',authRoute);
 
 app.listen(port, () => {
