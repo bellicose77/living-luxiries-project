@@ -1,5 +1,13 @@
+import { findUserByProperty } from "./user.js"
+
 export const registerService = async ({name,email,password})=>{
-    const user = await findUserByProperty(email);
+    try{
+        const user = await findUserByProperty('key',email)
+
+    }catch(e){
+        next(e);
+    }
+    
 
 
 }
