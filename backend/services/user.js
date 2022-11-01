@@ -10,4 +10,8 @@ export const findUserByProperty = (key,value) =>{
     //console.log("u is :",u);
     return u;
 
+};
+export const createNewUser = ({name,email,password})=>{
+    const user = new User({name,email,password});
+    return user.save();
 }

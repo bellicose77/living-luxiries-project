@@ -6,7 +6,7 @@ import { error } from '../utils/error.js';
     const {name,email,password} = req.body;
     try{
         const user = await registerService({name,email,password});
-        if(!user){
+        if(user){
             throw error("User has not found",400);
         }
         

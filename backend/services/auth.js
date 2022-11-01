@@ -1,6 +1,6 @@
 import { error } from "../utils/error.js";
 import bcrypt from 'bcrypt';
-import { findUserByProperty } from "./user.js"
+import { createNewUser, findUserByProperty } from "./user.js"
 
 export const registerService = async ({name,email,password})=>{
     //console.log("register service comming ")
