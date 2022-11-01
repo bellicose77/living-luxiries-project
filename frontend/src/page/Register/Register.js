@@ -16,7 +16,7 @@ const Register = () => {
         e.preventDefault();
         console.log(credentials);
         try{
-            const user = await axios.post('http://localhost:8000/api/auth/register',credentials);
+            const user = await axios.post('http://localhost:8000/api/v1/auth/register',credentials);
             navigate('/login')
             console.log(user);
         }catch(err){
