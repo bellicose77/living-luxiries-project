@@ -1,11 +1,12 @@
 import User from '../models/User.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import { registerService } from '../services/auth.js';
 
  export const registerController = async(req,res,next)=>{
     const {username,email,password} = req.body;
     try{
-        const user = await 
+        const user = await registerService({username,email,password}) 
         const saltRound =10;
         const salt = bcrypt.genSaltSync(saltRound);
         const hash = bcrypt.hashSync(password,salt);
