@@ -21,14 +21,16 @@ const connect = async() =>{
 app.use(cors());
 app.use(express.json());
 
-//error 
+// all endpoint routes 
+app.use(routes);
 
+// error handleing middelware 
 app.use((err,req,res,next)=>{
-  console.log(err);
-  return res.status(500).json({'message':"serverside error"})
+  const message = err.message ? err.message : "Server side error";
+  const status = err.status ? err.status : 500;
+  return res.status(status).json(message);
 })
 
-app.use(routes);
 
 app.listen(port, () => {
     connect()
