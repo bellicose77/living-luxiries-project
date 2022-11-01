@@ -9,7 +9,8 @@ import { error } from '../utils/error.js';
             throw error("Invalied data ",400)
         }
         const user = await registerService({name,email,password});
-        if(user){
+        console.log(user)
+        if(!user){
             throw error("User has not found",400);
         }
         
