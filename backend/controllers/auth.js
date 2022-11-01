@@ -3,15 +3,8 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
  export const registerController = async(req,res,next)=>{
+    const {username,email,password} = req.body;
     try{
-        const {username,email,password} = req.body;
-        // if(!username || !email || !password){
-        //     return res.status(400).json({'message':"invalid data"});
-        // }
-        // let user = await User.findOne({email});
-        // if(user){
-        //     return res.status(400).json({'message':'user already exits'})
-        // }
         const saltRound =10;
         const salt = bcrypt.genSaltSync(saltRound);
         const hash = bcrypt.hashSync(password,salt);
