@@ -5,7 +5,7 @@ export const findUserByProperty = (key,value) =>{
     if(key=='_id'){
         return User.findById(value)
     }
-    console.log("value: in user service :",value)
+    //console.log("value: in user service :",value)
     const u = User.findOne({email:value})
     //console.log("u is :",u);
     return u;
