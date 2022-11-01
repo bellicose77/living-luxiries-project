@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose  from 'mongoose';
 import dotenv from 'dotenv'
 import cors from 'cors'
-import authRoute from './routes/auth.js'
+import routes from './routes/main.js'
 const app = express();
 dotenv.config();
 const port = 8000;
@@ -28,7 +28,7 @@ app.use((err,req,res,next)=>{
   return res.status(500).json({'message':"serverside error"})
 })
 
-app.use('/api/auth',authRoute);
+app.use(routes);
 
 app.listen(port, () => {
     connect()
