@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import './Login.css'
 import logo from '../../images/logo.png'
+import axios from 'axios';
 
 const Login = () => {
   const[userdata,setUserData] = useState({username:'',password:''});
+  const navigate = useNavigate();
   const handleOnchangeInput = e =>{
     const fieldName = e.target.name;
     setUserData((pre)=>({...pre,[fieldName]:e.target.value}))
@@ -14,6 +16,9 @@ const Login = () => {
   const handleLogin = async(e)=>{
     e.preventDefault();
     try{
+      //console.log(userdata)
+      const res = await axios.post('http://localhost:8000/api/auth/login',userdata);
+      
 
     }
     catch(err){
