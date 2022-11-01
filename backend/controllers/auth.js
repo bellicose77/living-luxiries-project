@@ -1,10 +1,14 @@
 import jwt from 'jsonwebtoken'
 import { registerService } from '../services/auth.js';
+import { error } from '../utils/error.js';
 
  export const registerController = async(req,res,next)=>{
     const {name,email,password} = req.body;
     try{
-        const user = await registerService({name,email,password}) 
+        const user = await registerService({name,email,password});
+        if(!user){
+            throw error("User has not found",400);
+        }
         
         // await user.save();
         res.status(200).json({'message':"usercreated successfully",user})
