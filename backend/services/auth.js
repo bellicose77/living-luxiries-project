@@ -8,6 +8,10 @@ export const registerService = async ({name,email,password})=>{
         if(user){
             throw error("User is already exits",400);
         }
+        const saltRound =10;
+        const salt = bcrypt.genSaltSync(saltRound);
+        const hash = bcrypt.hashSync(password,salt);
+        console.log("register api",name,email,password);
 
     }catch(e){
         next(e);
