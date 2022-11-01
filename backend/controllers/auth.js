@@ -5,6 +5,9 @@ import { error } from '../utils/error.js';
  export const registerController = async(req,res,next)=>{
     const {name,email,password} = req.body;
     try{
+        if(!name || !email || !password){
+            throw error("Invalied data ",400)
+        }
         const user = await registerService({name,email,password});
         if(user){
             throw error("User has not found",400);
