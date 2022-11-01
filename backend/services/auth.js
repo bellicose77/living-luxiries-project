@@ -3,8 +3,11 @@ import bcrypt from 'bcrypt';
 import { findUserByProperty } from "./user.js"
 
 export const registerService = async ({name,email,password})=>{
+    //console.log("register service comming ")
+    console.log("from the beginin",name,email,password);
     try{
-        const user = await findUserByProperty('key',email);
+        const user = await findUserByProperty('email',email);
+        //console.log("USER form findUser",user)
         if(user){
             throw error("User is already exits",400);
         }

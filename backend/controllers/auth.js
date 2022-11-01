@@ -2,11 +2,11 @@ import jwt from 'jsonwebtoken'
 import { registerService } from '../services/auth.js';
 
  export const registerController = async(req,res,next)=>{
-    const {username,email,password} = req.body;
+    const {name,email,password} = req.body;
     try{
-        const user = await registerService({username,email,password}) 
+        const user = await registerService({name,email,password}) 
         
-        await user.save();
+        // await user.save();
         res.status(200).json({'message':"usercreated successfully",user})
 
     }catch(e){
