@@ -14,7 +14,8 @@ export const registerService = async ({name,email,password})=>{
         const salt = bcrypt.genSaltSync(saltRound);
         const hash = bcrypt.hashSync(password,salt);
         return createNewUser({name,email,password:hash});
+};
+
+export const loginService = ()=>{
     
-
-
 }
