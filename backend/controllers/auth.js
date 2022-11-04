@@ -24,8 +24,9 @@ import { error } from '../utils/error.js';
 
 export const logingController = async(req,res,next)=>{
     const {email,password} = req.body;
-     
+     //console.log("is ther ther")
     try{
+        console.log("Is there hiting")
         const user = await loginService({email,password})
         return res.status(200).json({'access_token':user})
         

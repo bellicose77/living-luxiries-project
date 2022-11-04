@@ -22,7 +22,7 @@ export const loginService = async ({email,password})=>{
     if(!user){
       throw error("There is no user ",400)
     }
-    const isPasswordMatch = bcrypt.compare(password,user.password);
+    const isPasswordMatch = await bcrypt.compare(password,user.password);
     if(!isPasswordMatch){
         throw error("Wrong password",400);
     }
