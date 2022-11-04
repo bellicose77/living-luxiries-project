@@ -27,18 +27,8 @@ export const logingController = async(req,res,next)=>{
      
     try{
         const user = await loginService({email,password})
-        //const user = await User.findOne({username:username});
-        if(!user){
-            return res.status(400).json({'message':"Invaild user"})
-        }
-        const isPasswordCorrect = bcrypt.compare(password,user.password)
-        if(!isPasswordCorrect){
-            return res.status(400).json({"message":"invaild password"})
-        }
-        else{
-            res.status(400).json({'message':"password match",user})
-        }
-        //console.log("loging frontend",username)
+        return res.status(200).json({'access_token':user})
+        
 
     }catch(err){
         next(err)

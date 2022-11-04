@@ -1,6 +1,7 @@
 import { error } from "../utils/error.js";
 import bcrypt from 'bcrypt';
 import { createNewUser, findUserByProperty } from "./user.js"
+import jwt from 'jsonwebtoken';
 
 export const registerService = async ({name,email,password})=>{
     //console.log("register service comming ")
@@ -22,6 +23,14 @@ export const loginService = async ({email,password})=>{
       throw error("There is no user ",400)
     }
     const isPasswordMatch = bcrypt.compare(password,user.password);
-    if(!)
+    if(!isPasswordMatch){
+        throw error("Wrong password",400);
+    }
+    const payload = {
+        name:user.name,
+        email:user.email
+    }
+    const token = jwt.sign(payload,process.env.SECRET_KEY)
+    return token;
 
 }
