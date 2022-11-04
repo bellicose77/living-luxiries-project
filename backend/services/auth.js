@@ -16,6 +16,7 @@ export const registerService = async ({name,email,password})=>{
         return createNewUser({name,email,password:hash});
 };
 
-export const loginService = ()=>{
-    
+export const loginService = ({email,password})=>{
+    const user = await findUserByProperty('email',email)
+
 }
