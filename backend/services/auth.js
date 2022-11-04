@@ -22,5 +22,6 @@ export const loginService = async ({email,password})=>{
       throw error("There is no user ",400)
     }
     const isPasswordMatch = bcrypt.compare(password,user.password);
+    if(!)
 
 }
