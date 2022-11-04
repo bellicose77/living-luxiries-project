@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import { registerService } from '../services/auth.js';
+import { loginService, registerService } from '../services/auth.js';
 import { error } from '../utils/error.js';
 
  export const registerController = async(req,res,next)=>{
@@ -23,10 +23,11 @@ import { error } from '../utils/error.js';
 };
 
 export const logingController = async(req,res,next)=>{
-    const {username,password} = req.body;
+    const {email,password} = req.body;
      
     try{
-        const user = await User.findOne({username:username});
+        const user = await loginService({email,password})
+        //const user = await User.findOne({username:username});
         if(!user){
             return res.status(400).json({'message':"Invaild user"})
         }

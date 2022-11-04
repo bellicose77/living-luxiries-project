@@ -16,7 +16,11 @@ export const registerService = async ({name,email,password})=>{
         return createNewUser({name,email,password:hash});
 };
 
-export const loginService = ({email,password})=>{
-    const user = await findUserByProperty('email',email)
+export const loginService = async ({email,password})=>{
+    const user = await findUserByProperty('email',email);
+    if(!user){
+      throw error("There is no user ",400)
+    }
+    const isPasswordMatch = bcrypt.compare(password,user.password);
 
 }
