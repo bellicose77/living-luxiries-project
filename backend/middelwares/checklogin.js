@@ -5,9 +5,10 @@ export const checkLogin = async (req,res,next)=>{
     const token = authorization.split(" ")[1];
     try{
         const verify = await jwt.verify(token,process.env.SECRET_KEY);
-        if(verify){
-            return res.status(200).json(verify)
-        }
+        const {name,email} = verify;
+        req.name=name;
+        req.email=email;
+        next();
     }catch(err){
         next(err);
     }

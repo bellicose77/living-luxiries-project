@@ -38,5 +38,5 @@ export const logingController = async(req,res,next)=>{
 };
 
 export const homeController = async(req,res,next)=>{
-    res.status(200).json({"message":"welcome to living luxiries"})
+    res.status(200).json(req.name)
 }
