@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post('/register',registerController);
 router.post('/login',logingController);
+router.get('/home',)
 
 export default router;
