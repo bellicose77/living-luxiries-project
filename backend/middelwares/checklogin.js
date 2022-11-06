@@ -1,7 +1,7 @@
 export const checkLogin = async (req,res,next)=>{
-    const {authoraization} = req.headers;
-    const token = authoraization.split[1];
-    console.log("from middelware",token);
+    const {authorization} = req.headers;
+    const token = authorization.split(" ")
+    console.log(token);
     next();
     
 }
