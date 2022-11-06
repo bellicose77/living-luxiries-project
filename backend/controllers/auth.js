@@ -1,3 +1,4 @@
+import { json } from 'express';
 import jwt from 'jsonwebtoken'
 import { loginService, registerService } from '../services/auth.js';
 import { error } from '../utils/error.js';
@@ -34,4 +35,8 @@ export const logingController = async(req,res,next)=>{
     }catch(err){
         next(err)
     }
+};
+
+export const homeController = async(req,res,next)=>{
+    res.status(200),json({"message":"welcome to living luxiries"})
 }
