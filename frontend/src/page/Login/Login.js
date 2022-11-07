@@ -6,7 +6,7 @@ import logo from '../../images/logo.png'
 import axios from 'axios';
 
 const Login = () => {
-  const[userdata,setUserData] = useState({username:'',password:''});
+  const[userdata,setUserData] = useState({email:'',password:''});
   const navigate = useNavigate();
   const handleOnchangeInput = e =>{
     const fieldName = e.target.name;
@@ -17,7 +17,9 @@ const Login = () => {
     e.preventDefault();
     try{
       //console.log(userdata)
-      const res = await axios.post('http://localhost:8000/api/auth/login',userdata);
+      const res = await axios.post('http://localhost:8000/api/v1/auth/login',userdata);
+      navigate()
+      console.log(res);
       
 
     }
@@ -38,7 +40,7 @@ const Login = () => {
                    </div>
                    <div className='loginInput'>
                      <div className='loginInputFiel'>
-                       <input name='username' onChange={handleOnchangeInput} className='loginInputField' type="text" placeholder="username"/>
+                       <input name='email' onChange={handleOnchangeInput} className='loginInputField' type="text" placeholder="username"/>
                          <br/>
                         <input name='password' onChange={handleOnchangeInput} className='loginInputField' type="password" placeholder="password"/>
                         <br/>

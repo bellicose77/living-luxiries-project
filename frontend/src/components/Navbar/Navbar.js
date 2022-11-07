@@ -8,13 +8,13 @@ const Navbar = () => {
         <div className='navContainer'>
         <div className='navWrapper'>
           <div className='nlogo'>
-            <Link to='/'>
+            <Link to='/home'>
             <img className='logoImg' src={logo}/>
             </Link>
             
           </div>
           <div className='nItem'>
-            <Link to='/'>
+            <Link to='/home'>
             <div>
             Home
            </div>

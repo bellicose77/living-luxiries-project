@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import './Register.css'
 
 const Register = () => {
-    const[credentials,setCredentials] = useState({username:'',email:'',password:''});
+    const[credentials,setCredentials] = useState({name:'',email:'',password:''});
     const handleOnchange = e =>{
         const fieldname = e.target.name;
         setCredentials({...credentials,[fieldname]:e.target.value})
@@ -34,8 +34,8 @@ const Register = () => {
             </div>
             <div className='regForm'>
                 <form className='regFormInp'>
-                    <lable>User Name: </lable>
-                    <input name='username' onChange={handleOnchange} type="text"/>
+                    <lable>Name: </lable>
+                    <input name='name' onChange={handleOnchange} type="text"/>
                     <br/>
                     <lable>Email: </lable>
                     <input name='email' onChange={handleOnchange} type="email"/>
