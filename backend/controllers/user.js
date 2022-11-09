@@ -21,4 +21,7 @@ export const updateUserById = async(req,res,next)=>{
         next(err)
     }
 
-}
+};
+export const deleteUserById = async(req,res,next)=>{
+
+};
