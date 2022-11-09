@@ -14,5 +14,11 @@ export const getUserById = async(req,res,next)=>{
 
 };
 export const updateUserById = async(req,res,next)=>{
-    
+    try{
+
+    }
+    catch(err){
+        next(err)
+    }
+
 }
