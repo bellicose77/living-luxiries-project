@@ -4,4 +4,7 @@ export const getUsers = async (req,res,next)=>{
     }catch(err){
         next(err)
     }
+};
+export const getUserById = async(req,res,next)=>{
+    
 }
