@@ -12,4 +12,7 @@ export const getUserById = async(req,res,next)=>{
         next(err)
     }
 
+};
+export const updateUserById = async(req,res,next)=>{
+    
 }
